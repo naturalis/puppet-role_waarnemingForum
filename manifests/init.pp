@@ -120,6 +120,19 @@ class role_waarnemingforum (
     require       => File["${web_root}/smf"],
   }
 
+  # Download and unpack SMF Dutch language pack
+  archive { "/tmp/smf_${smf_version_dashed}_dutch.tar.gz":
+    ensure        => present,
+    extract       => true,
+    extract_path  => "${web_root}/smf",
+    source        => "http://download.simplemachines.org/index.php/smf_${smf_version_dashed}_dutch.tar.gz",
+    creates       => "${web_root}/smf/agreement.dutch.txt",
+    cleanup       => true,
+    user          => $system_user,
+    group         => $system_user,
+    require       => Archive["/tmp/smf_${smf_version_dashed}_install.tar.gz"],
+  }
+
   # Remove installation php script
   file { "${web_root}/smf/install.php":
     ensure  => absent,
