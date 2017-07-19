@@ -88,9 +88,11 @@ class role_waarnemingforum (
     },
     locations            => {
       forum_root => {
-        location            => '/',
+        location            => ' = /',
+        www_root            => '~',
+        index_file          => [],
         location_custom_cfg => {
-          return => '301 $scheme://$host/smf/',
+          return => '301 /smf/',
         },
       },
       forum_fpm  => {
