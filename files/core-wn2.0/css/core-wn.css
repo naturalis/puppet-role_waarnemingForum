@@ -1,0 +1,255 @@
+/* The main menu. */
+.main_menu
+{
+	padding-left: 1em;
+}
+.main_menu ul
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	background: url(../images/maintab_first.gif) no-repeat bottom left;
+	padding-left: 10px;
+}
+.main_menu li
+{
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+.main_menu li a
+{
+	float: left;
+	display: block;
+	color: white;
+	font-size: 0.8em;
+	font-family: tahoma, sans-serif;
+	text-transform: uppercase;
+}
+.main_menu li a:hover
+{
+	color: #e0e0ff;
+	text-decoration: none;
+}
+.main_menu li a span
+{
+	background: url(../images/maintab_back.gif) repeat-x bottom left;
+	display: block;
+	padding: 0.1em 0.5em 0.5em 0.5em;
+}
+.main_menu li.last a span
+{
+	background: url(../images/maintab_last.gif) no-repeat bottom right;
+	padding: 0.1em 1em 0.5em 0.5em;
+}
+.main_menu li.active a span em
+{
+	padding: 0.1em 0.5em 0.5em 0.5em;
+	display: block;
+	font-style: normal;
+	background: url(../images/maintab_active_back.gif) repeat-x bottom right;
+}
+.main_menu li.active a span
+{
+	background: url(../images/maintab_active_first.gif) no-repeat bottom left;
+	padding: 0 0 0 8px;
+}
+.main_menu li.last.active
+{
+	float: left;
+	background: url(../images/maintab_last.gif) no-repeat bottom right;
+	padding: 0 8px 0 0;
+}
+/* IE6 doesn't support multiple class selectors */
+.main_menu li.lastactive
+{
+	float: left;
+	padding: 0 8px 0 0;
+	background: url(../images/maintab_last.gif) no-repeat bottom right;
+}
+.main_menu li.active a
+{
+	background: url(../images/maintab_active_last.gif) no-repeat bottom right;
+	padding-right: 8px;
+}
+
+.main_menu li a {
+color:white;
+display:block;
+float:left;
+font-family:tahoma,sans-serif;
+font-size:0.8em;
+font-weight:bold;
+text-transform:uppercase;
+}
+
+/* modificaties */
+#info_section {
+width:500px;
+}
+
+
+#myavatar {
+float:left;
+margin-right:10px;
+}
+
+#greeting_section {
+clear: none;
+padding: 0;
+margin: 0;
+list-style-type: none;
+}
+
+#greeting_section em
+{
+	font-style: normal;
+	font-weight: bold;
+}
+#greeting_section li#name
+{
+	padding-left: 0em;
+}
+
+#user_section
+{
+	padding: 1px;
+	margin: 1px 0 0 0;
+	font-size: 90%;	
+	float:left;
+}
+#user_section ul {
+list-style-type: none;
+margin-top:5px;
+padding-top: 0;
+padding-left:0;
+}
+
+#user_section li {
+padding-top: 0;
+padding-left:0;
+}
+
+/* Normal, standard links. */
+a:link
+{
+	color: #0069b4;
+	/*color: #354c6e;*/
+	text-decoration: none;
+}
+a:visited
+{
+	color: #0069b4;
+	/*color: #354c6e;*/
+	text-decoration: none;
+}
+a:hover
+{
+	text-decoration: underline;
+}
+
+.smalltext {
+font-family:verdana,sans-serif;
+font-size:0.8em;
+}
+
+.main_menu li a {
+color:white;
+display:block;
+float:left;
+font-family:tahoma,sans-serif;
+font-size:0.8em;
+font-weight:bold;
+text-transform:uppercase;
+}
+
+table.boardsframe td.info p 
+{
+font-size: 0.7em;
+color: #333333;
+padding-left: 0.5em;
+}
+table.boardsframe td.info h4 {
+margin-bottom:3px !important;
+}
+
+.catbg, tr.catbg td, .catbg3, tr.catbg3 td {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:#A1BFD9 url(../images/catbg2.jpg) repeat-x scroll 0 0;
+color:#FFFFFF;
+padding-left:10px;
+padding-right:10px;
+}
+
+h1 {
+color:#FFFFFF;
+font-family:Verdana,helvetica,sans-serif;
+font-size:135%;
+margin:0;
+padding:0.6em 0;
+}
+
+#header {
+background:#FFFFFF;
+color:#000000;
+padding-left:10px;
+padding-right:10px;
+}
+
+.buttonlist ul, .buttonlist_bottom ul {
+font-weight:bold;
+}
+
+html
+{
+	font-size: 16px;
+}
+
+body {
+background: #dfe6ef;
+}
+
+.windowbg2
+{
+	background-color: #FAFAFA;
+}
+
+.windowbg3
+{
+	background-color: #E1E2E6;
+}
+
+.titlebg, tr.titlebg th, tr.titlebg td, .titlebg2, tr.titlebg2 th, tr.titlebg2 td, #credits h3
+{
+	background: url(../images/titlebg.jpg) #bfd3ee repeat-x;
+}
+
+.catbg a:link, .catbg a:visited 
+{
+	color: #fff;
+	text-decoration: underline;
+}
+.catbg a:hover 
+{
+	color: #e0e0ff;
+}
+
+.catbg2 a:link, .catbg2 a:visited
+{
+	color: white;
+	text-decoration: none;
+}
+
+.catbg2 a:hover, .catbg3 a:hover
+{
+	color: #e0e0ff;
+}
+
+.bordercolor
+{
+	background-color: #C5C5C5;
+	padding: 0px;
+}
+
