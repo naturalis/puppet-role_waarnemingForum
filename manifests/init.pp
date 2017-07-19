@@ -42,11 +42,10 @@ class role_waarnemingforum (
   }
 
   # Create forum dir
-  file { "${web_root}/smf":
+  file { [ $web_root, "${web_root}/smf" ]:
     ensure  => directory,
     owner   => $system_user,
     group   => $system_user,
-    recurse => true,
   }
 
   # Install PHP with FPM
