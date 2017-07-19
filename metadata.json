@@ -1,13 +1,13 @@
 {
   "name": "role_waarnemingforum",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Edwin Hermans <edwin@madtech.cx>",
   "summary": "Installs and configures web-server and database components to host forum.waarneming.nl",
   "license": "Apache 2.0",
   "source": "https://github.com/naturalis/puppet-role_waarnemingforum",
   "project_page": "https://github.com/naturalis/puppet-role_waarnemingforum",
   "issues_url": "https://github.com/naturalis/puppet-role_waarnemingforum/issues",
-  "tags": ["waarneming.nl", "observation.org", "nginx", "php", "fpm", "smf", "mysql"],
+  "tags": ["waarneming.nl", "nginx", "php", "fpm", "smf", "mysql"],
   "operatingsystem_support": [{
     "operatingsystem": "Ubuntu",
     "operatingsystemrelease": [ "16.04" ]

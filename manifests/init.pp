@@ -17,7 +17,7 @@ class role_waarnemingforum (
   $smf_version = '2.0.14',
   $smf_maintenance = 0,
   $smf_cookie = undef,
-  $smf_mailfrom = undex,
+  $smf_mailfrom = undef,
   $smf_image_proxy_secret = undef,
 ) {
   # Install database
