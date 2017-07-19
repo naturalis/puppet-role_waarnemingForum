@@ -115,7 +115,7 @@ class role_waarnemingforum (
     cleanup       => true,
     user          => $system_user,
     group         => $system_user,
-    require       => File[$web_root],
+    require       => File["${web_root}/smf"],
   }
 
   # Remove installation php script
