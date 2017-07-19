@@ -133,4 +133,17 @@ class role_waarnemingforum (
     group   => $system_user,
     mode    => '0640',
   }
+
+  # Waarneming theme
+  file { "${web_root}/smf/Themes/core-wn2.0":
+    ensure  => directory,
+    source  => 'puppet:///modules/role_waarnemingforum/core-wn2.0',
+    recurse => true,
+    require => Archive["/tmp/smf_${smf_version_dashed}_install.tar.gz"],
+  }
+
+  file { "${web_root}/smf/Themes/core-wn":
+    ensure => link,
+    target => "${web_root}/smf/Themes/core-wn2.0",
+  }
 }
