@@ -90,7 +90,7 @@ class role_waarnemingforum (
       forum_root => {
         location            => ' = /',
         www_root            => '~',
-        index_file          => [],
+        index_files         => [],
         location_custom_cfg => {
           return => '301 /smf/',
         },
