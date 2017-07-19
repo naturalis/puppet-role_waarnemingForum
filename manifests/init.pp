@@ -88,8 +88,8 @@ class role_waarnemingforum (
     },
     locations            => {
       forum_root => {
-        location            => ' = /',
-        www_root            => '~',
+        location            => '= /',
+        www_root            => undef,
         index_files         => [],
         location_custom_cfg => {
           return => '301 /smf/',
