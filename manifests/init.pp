@@ -4,6 +4,11 @@
 #
 class role_waarnemingforum (
   $mysql_root_password = undef,
+  $defaults = { require => Package['nginx'] },
+  $certs_and_keys = {
+    '/etc/nginx/ssl/waarneming_nl-chained.crt'   => { content => $::role_waarneming::conf::waarneming_nl_crt },
+    '/etc/nginx/ssl/waarneming_nl.key'           => { content => $::role_waarneming::conf::waarneming_nl_key },
+  },
   $mysql_override_options = {
   },
   $system_user = 'forum',
@@ -104,6 +109,15 @@ class role_waarnemingforum (
       },
     }
   }
+
+  file { '/etc/nginx/ssl':
+    ensure  => directory,
+    require => Package['nginx'],
+  }
+
+  # SSL certs and keys for sites
+  create_resources(file, $certs_and_keys, $defaults)
+
 
   # Download and unpack SMF
   $smf_version_dashed = regsubst($smf_version,'\.', '-', 'G')
