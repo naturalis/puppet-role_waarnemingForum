@@ -111,7 +111,8 @@ class role_waarnemingforum (
         www_root      => undef,
         index_files   => undef,
       },
-    }
+    },
+    require              => [ File['/etc/nginx/ssl/waarneming_nl-chained.crt'], File['/etc/nginx/ssl/waarneming_nl.key'] ],
   }
 
   file { '/etc/nginx/ssl':
