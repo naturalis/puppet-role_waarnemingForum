@@ -88,6 +88,10 @@ class role_waarnemingforum (
     server_name          => $server_name,
     use_default_location => false,
     www_root             => $web_root,
+    ssl                  => true,
+    ssl_cert             => '/etc/nginx/ssl/waarneming_nl-chained.crt',
+    ssl_key              => '/etc/nginx/ssl/waarneming_nl.key',
+    ssl_redirect         => true,
     server_cfg_prepend   => {
       server_name_in_redirect => 'off',
     },
