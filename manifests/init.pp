@@ -174,6 +174,14 @@ class role_waarnemingforum (
     require => Archive["/tmp/smf_${smf_version_dashed}_install.tar.gz"],
   }
 
+  # Waarneming classic Smileys
+  file { "${web_root}/smf/Smileys/classic":
+    ensure  => directory,
+    source  => 'puppet:///modules/role_waarnemingforum/classic',
+    recurse => true,
+    require => Archive["/tmp/smf_${smf_version_dashed}_install.tar.gz"],
+  }
+
   file { "${web_root}/smf/Themes/core-wn":
     ensure => link,
     target => "${web_root}/smf/Themes/core-wn2.0",
