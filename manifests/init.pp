@@ -166,6 +166,14 @@ class role_waarnemingforum (
     mode    => '0640',
   }
 
+  # Waarneming classic Smileys
+  file { "${web_root}/smf/Smileys/classic":
+    ensure  => directory,
+    source  => 'puppet:///modules/role_waarnemingforum/classic',
+    recurse => true,
+    require => Archive["/tmp/smf_${smf_version_dashed}_install.tar.gz"],
+  }
+
   # Waarneming theme
   file { "${web_root}/smf/Themes/core-wn2.0":
     ensure  => directory,
@@ -174,10 +182,26 @@ class role_waarnemingforum (
     require => Archive["/tmp/smf_${smf_version_dashed}_install.tar.gz"],
   }
 
-  # Waarneming classic Smileys
-  file { "${web_root}/smf/Smileys/classic":
+  # Waarneming greengrass Theme
+  file { "${web_root}/smf/Themes/greengrass":
     ensure  => directory,
-    source  => 'puppet:///modules/role_waarnemingforum/classic',
+    source  => 'puppet:///modules/role_waarnemingforum/greengrass',
+    recurse => true,
+    require => Archive["/tmp/smf_${smf_version_dashed}_install.tar.gz"],
+  }
+
+  # Waarneming mobile Theme
+  file { "${web_root}/smf/Themes/mobile":
+    ensure  => directory,
+    source  => 'puppet:///modules/role_waarnemingforum/mobile',
+    recurse => true,
+    require => Archive["/tmp/smf_${smf_version_dashed}_install.tar.gz"],
+  }
+
+  # Waarneming reference Theme
+  file { "${web_root}/smf/Themes/reference":
+    ensure  => directory,
+    source  => 'puppet:///modules/role_waarnemingforum/reference',
     recurse => true,
     require => Archive["/tmp/smf_${smf_version_dashed}_install.tar.gz"],
   }
