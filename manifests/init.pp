@@ -58,6 +58,7 @@ class role_waarnemingforum (
     ensure     => present,
     fpm        => true,
     extensions => {
+      gd     => {},
       mysql  => {},
       mcrypt => {},
     },
@@ -210,4 +211,17 @@ class role_waarnemingforum (
     ensure => link,
     target => "${web_root}/smf/Themes/core-wn2.0",
   }
+
+  # Create SMF version checker for sensu
+  file { "/usr/local/sbin/chksmfversion.sh":
+    content => template('role_waarnemingforum/chksmfversion.erb'),
+    mode    => '0755',
+  }
+
+  # export check so sensu monitoring can make use of it
+  @@sensu::check { 'Check SMF version' :
+    command => '/usr/local/sbin/chksmfversion.sh',
+    tag     => 'central_sensu',
+  }
+
 }

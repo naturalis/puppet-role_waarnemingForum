@@ -1,0 +1,22 @@
+#!/bin/bash
+##################################################################
+# This script is for checking the version status of SMF software #
+#                                                                #
+# Very basic checking, depends on smf website (changelog version)#
+#                                                                #
+##################################################################
+
+# Define all the constant variables
+
+localversion=`cat <%= @web_root -%>/smf/index.php| grep forum_version | awk -F"'" '{print $2}'`
+remoteversion=`curl -s https://download.simplemachines.org/ | grep changelog | awk -F">|<" '{print $5}'`
+
+if [ "$localversion" != "$remoteversion" ]
+  then
+    echo "CRITICAL : SMF update needed. local version = $localversion, remote version = $remoteversion"
+    exit 2
+  else
+    echo "OK: SMF up to date, version: $localversion"
+    exit 0
+fi
+
