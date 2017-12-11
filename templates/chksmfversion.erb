@@ -9,7 +9,7 @@
 # Define all the constant variables
 
 localversion=`cat <%= @web_root -%>/smf/index.php| grep forum_version | awk -F"'" '{print $2}'`
-remoteversion=`curl -s https://download.simplemachines.org/ | grep changelog | awk -F">|<" '{print $5}'`
+remoteversion=`curl -s https://download.simplemachines.org/ | grep changelog | tail -n1 | awk -F">|<" '{print $5}' | awk '{ gsub("smf_|_changelog.txt","",$1); print $1}' | awk '{ gsub("-",".",$1); print "SMF "$1}'`
 
 if [ "$localversion" != "$remoteversion" ]
   then

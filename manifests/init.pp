@@ -220,8 +220,9 @@ class role_waarnemingforum (
 
   # export check so sensu monitoring can make use of it
   @@sensu::check { 'Check SMF version' :
-    command => '/usr/local/sbin/chksmfversion.sh',
-    tag     => 'central_sensu',
+    command     => '/usr/local/sbin/chksmfversion.sh',
+    handlers    => ['default'],
+    tag         => 'central_sensu',
   }
 
 }
